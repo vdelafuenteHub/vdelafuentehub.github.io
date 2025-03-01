@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[732],{1732:e=>{e.exports=JSON.parse('{"404":{"title":"404"},"app":{"description":"Una landing page sobre mi"},"home":{"title":"Home","text":"\xa1Hola mundo!"}}')}}]);

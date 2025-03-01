@@ -1,0 +1,43 @@
+{
+  "name": "i18n-ssg-nextjs",
+  "version": "0.1.0",
+  "description": "env seed",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vdelafuenteHub/vdelafuentehub.github.io"
+  },
+  "bugs": {
+    "url": "https://github.com/vdelafuenteHub/vdelafuentehub.github.io/issues"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "serve": "serve out",
+    "github:export": "next build && touch docs/.nojekyll",
+    "lint": "next lint",
+    "prettier:check": "npx prettier --check src",
+    "prettier:format": "npx prettier --write src"
+  },
+  "dependencies": {
+    "@next/third-parties": "^15.2.1",
+    "next": "^15.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.0",
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^22.13.9",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "^15.2.1",
+    "eslint-config-prettier": "^10.1.1",
+    "isomorphic-dompurify": "^2.22.0",
+    "rosetta": "^1.1.0",
+    "serve": "^14.2.4",
+    "typescript": "^5.8.2"
+  }
+}

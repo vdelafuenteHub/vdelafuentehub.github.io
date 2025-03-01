@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/es/(.*)$ [NC]
+RewriteRule ^ /%1 [L,R=301]

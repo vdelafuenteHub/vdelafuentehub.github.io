@@ -1,0 +1,12 @@
+{
+  "app": {
+    "description": "Una landing page sobre mi"
+  },
+  "404": {
+    "title": "404"
+  },
+  "home": {
+    "title": "Home",
+    "text": "¡Hola mundo!"
+  }
+}
