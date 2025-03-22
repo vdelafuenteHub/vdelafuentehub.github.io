@@ -1,0 +1,36 @@
+.root {
+  overflow: hidden;
+  background-color: #999;
+  border-radius: 50%;
+  filter: grayscale(1) brightness(1.125) sepia(3%) drop-shadow(0 0 #000);
+}
+
+.root:hover {
+  filter: drop-shadow(0 0 #000);
+}
+
+.right {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.left {
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 640px) {
+  .root {
+    display: block;
+    margin-top: 0.5rem !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .right,
+  .left {
+    float: none;
+  }
+}

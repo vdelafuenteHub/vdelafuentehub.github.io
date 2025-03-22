@@ -1,0 +1,110 @@
+.root {
+}
+
+.root p {
+  margin-bottom: var(--ui-typography-gutter-bottom, 1rem);
+}
+
+ul.root,
+.root ul {
+  list-style: disc;
+  margin: 1rem 0;
+  padding: 0 0 0 2rem;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.gutterBottom {
+  margin-bottom: var(--ui-typography-gutter-bottom, 1rem);
+}
+
+.noWrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: var(--ui-typography-heading-color, inherit);
+  font-family: var(--ui-typography-heading-font-family, sans-serif);
+  font-weight: var(--ui-typography-heading-font-weight, 700);
+}
+
+.h1.gutterBottom,
+.h2.gutterBottom,
+.h3.gutterBottom,
+.h4.gutterBottom,
+.h5.gutterBottom,
+.h6.gutterBottom {
+  margin-bottom: var(--ui-typography-heading-gutter-bottom, 1rem);
+}
+
+.h1 {
+  font-size: var(--ui-typography-variant-h1-font-size, calc(1.525rem + 3.3vw));
+  line-height: var(--ui-typography-variant-h1-line-height, 1.2);
+}
+
+.h2 {
+  font-size: var(--ui-typography-variant-h2-font-size, calc(1.475rem + 2.7vw));
+  line-height: var(--ui-typography-variant-h2-line-height, 1.2);
+}
+
+.h3 {
+  font-size: var(--ui-typography-variant-h3-font-size, calc(1.4rem + 1.8vw));
+  line-height: var(--ui-typography-variant-h3-line-height, 1.2);
+}
+
+.h4 {
+  font-size: var(--ui-typography-variant-h4-font-size, calc(1.325rem + 0.9vw));
+  line-height: var(--ui-typography-variant-h4-line-height, 1.2);
+}
+
+.h5 {
+  font-size: var(--ui-typography-variant-h5-font-size, calc(1.275rem + 0.3vw));
+  line-height: var(--ui-typography-variant-h5-line-height, 1.2);
+}
+
+.h6 {
+  font-size: var(--ui-typography-variant-h6-font-size, 90%);
+  line-height: var(--ui-typography-variant-h6-line-height, 1.2);
+}
+
+.body1,
+.body2 {
+  color: var(--ui-typography-body-color, inherit);
+  font-family: var(--ui-typography-body-font-family, sans-serif);
+  font-weight: var(--ui-typography-body-font-weight, 400);
+}
+
+.body1 {
+  font-size: var(--ui-typography-variant-body1-font-size, 1.125rem);
+  line-height: var(--ui-typography-variant-body1-line-height, 1.5);
+}
+
+.body2 {
+  font-size: var(--ui-typography-variant-body2-font-size, 0.875rem);
+  line-height: var(--ui-typography-variant-body2-line-height, 1.5);
+}
+
+.inherit {
+  font: inherit;
+}

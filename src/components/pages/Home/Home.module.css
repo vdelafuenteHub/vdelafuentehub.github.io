@@ -1,0 +1,44 @@
+.repositoryTable {}
+
+.repositoryTableHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 0.625rem;
+}
+.repositoryTableHeader span,
+.repositoryTableHeader b {
+  text-align: center;
+  font-weight: 600;
+}
+
+.repositoryTableBody {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.repository {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 0.625rem;
+  border-top: 1px solid var(--palette-color-4);
+  transition: background-color ease-in-out 150ms;
+}
+
+.repository:hover {
+  background-color: var(--palette-color-2);
+}
+
+.repositoryDate {
+  width: 80px;
+}
+
+.repositoryText {
+  flex-grow: 1;
+}
+
+.repositoryFork {
+  width: 30px;
+  text-align: center;
+}

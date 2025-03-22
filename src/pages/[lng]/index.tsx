@@ -1,11 +1,27 @@
-import { Home } from '@/components/pages/Home';
+import { getStaticProps as getIntlStaticProps } from '@/ui/plugins/Intl';
+export { getStaticPaths } from '@/ui/plugins/Intl';
 
-export { getStaticPaths, getStaticProps } from '@/ui/plugins/Intl';
+import {
+  Home,
+  getStaticProps as getHomeStaticProps,
+} from '@/components/pages/Home';
 
-export default function Page() {
+export default function Page({ ...props }) {
   return (
     <>
-      <Home />
+      <Home {...props} />
     </>
   );
 }
+
+export const getStaticProps = async ({ ...ctx }) => {
+  const { props: intlProps } = await getIntlStaticProps(ctx);
+  const { props: pageProps } = await getHomeStaticProps();
+
+  return {
+    props: {
+      ...intlProps,
+      ...pageProps,
+    },
+  };
+};

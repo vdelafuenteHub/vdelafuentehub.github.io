@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.iconLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}

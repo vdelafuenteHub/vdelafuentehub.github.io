@@ -1,15 +1,39 @@
 :root {
+  --palette-color-1: #f6f6f6;
+  --palette-color-2: #d4d4d4;
+  --palette-color-3: #333333;
+  --palette-color-4: #b3b3b3;
+  --palette-color-5: #919191;
+  --palette-color-dark: #111111;
+  --palette-color-light: #ffffff;
+  /* ; */
+  --palette-heading-fg-color: var(--palette-color-dark);
+  --palette-body-fg-color: var(--palette-color-3);
+  --palette-bg-color: var(--palette-color-1);
+  /* ui */
+  --ui-typography-heading-color: var(--palette-heading-fg-color);
+  --ui-typography-body-color: var(--palette-body-fg-color);
+  --ui-typography-variant-body1-font-size: 1rem;
+  --ui-typography-variant-body1-line-height: 1.5;
+  --ui-backdrop-main-color: rgba(0, 0, 0, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --palette-heading-fg-color: var(--palette-color-light);
+    --palette-body-fg-color: var(--palette-color-1);
+    --palette-bg-color: var(--palette-color-3);
+    --ui-typography-heading-color: var(--palette-heading-fg-color);
+    --ui-typography-body-color: var(--palette-body-fg-color);
   }
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -47,6 +71,24 @@ body {
   flex-flow: column nowrap;
 }
 
-main {
-  flex-grow: 1;
+/* styled */
+html {
+  color: var(--palette-body-fg-color);
+  background-color: var(--palette-bg-color);
+}
+
+a:hover .SvgIcon-root {
+  opacity: 0.9;
+}
+
+/* helpers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

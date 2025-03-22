@@ -1,4 +1,4 @@
-type Id = number;
+export type Id = number;
 
 export type Item = {
   id: Id;

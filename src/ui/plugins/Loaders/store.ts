@@ -1,17 +1,17 @@
-import type { Item, LoadersContext } from './types';
+import type { Id, Item, LoadersContext } from './types';
 
 type Listener = () => void;
 
 let queue: Item[] = [];
 let listeners: Listener[] = [];
 
-export const show = (value => {
+export const show = ((value?: Item) => {
   const { id = Date.now(), ...rest } = { ...value };
   queue.push({ id, ...rest });
   emitChange();
 }) satisfies LoadersContext['show'];
 
-export const hide = (value => {
+export const hide = ((value?: Id) => {
   if (value) {
     const index = queue.findIndex(i => i?.id === value);
     queue.splice(index, 1);

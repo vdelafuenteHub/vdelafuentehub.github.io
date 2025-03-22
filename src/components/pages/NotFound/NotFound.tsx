@@ -1,17 +1,27 @@
 import Head from 'next/head';
+import { usePathname } from 'next/navigation';
 
 import { useIntl } from '@/ui/plugins/Intl';
 
+import { Typography } from '@/ui/components/atoms/Typography';
+
 const NotFound = () => {
   const { t } = useIntl();
+  const pathname = usePathname();
 
   return (
     <>
       <Head>
-        <title>{`${t('404.title')} | ${process.env.NEXT_PUBLIC_TITLE}`}</title>
+        <title>{t('404.title')}</title>
       </Head>
 
-      <p>{t('404.text')}</p>
+      <Typography
+        component="p"
+        gutterBottom
+        dangerouslySetInnerHTML={{
+          __html: t('404.text', { pathname: `<code>${pathname}</code>` }),
+        }}
+      />
     </>
   );
 };

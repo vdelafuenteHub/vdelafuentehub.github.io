@@ -23,6 +23,9 @@ const nextConfig: NextConfig = {
   ...(process.env.NODE_ENV === 'production' && {
     distDir: 'docs',
   }),
+  images: {
+    unoptimized: true,
+  },
   env: {},
   async redirects() {
     return [...REDIRECTS_BY_DEFAULT_LOCAL];

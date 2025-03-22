@@ -1,0 +1,23 @@
+.root {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  font-size: var(--ui-svg-icon-font-size, 1.875rem);
+  vertical-align: middle;
+  transition: var(--ui-svg-icon-transition, fill 200ms);
+  user-select: none;
+}
+
+.small {
+  font-size: 20px;
+}
+
+.medium {
+  font-size: 24px;
+}
+
+.large {
+  font-size: 35px;
+}
