@@ -12,7 +12,7 @@ import { i18n } from '~/i18n.config';
 
 export default function Document(props: DocumentProps) {
   const lang = useMemo(
-    () => String(props.__NEXT_DATA__.query?.lng || i18n.defaultLocale),
+    () => String(props.__NEXT_DATA__.query?.lng || i18n?.defaultLocale),
     [props.__NEXT_DATA__.query?.lng]
   );
 

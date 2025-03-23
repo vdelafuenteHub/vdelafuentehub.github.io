@@ -23,7 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
 
       <Header />
 
-      <Container component="main" maxWidth={MAX_WIDTH} className={styles.main}>
+      <Container component="main" className={styles.main} maxWidth={MAX_WIDTH}>
         {children}
       </Container>
 

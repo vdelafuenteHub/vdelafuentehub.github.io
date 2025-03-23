@@ -1,8 +1,7 @@
-import { repos } from '@/api';
-
 import { set } from '@/ui/hooks/useLocalStorage/store';
 import { hide, show } from '@/ui/plugins/Loaders/store';
 
+import { repos } from '@/api';
 import { sortBy } from '@/utils/helpers';
 
 export type Repo = {
@@ -11,6 +10,13 @@ export type Repo = {
   timestamp: string;
   fork: boolean;
 };
+
+const mapByArgs = ({ ...args }): Repo => ({
+  name: args?.name,
+  url: args?.html_url,
+  timestamp: args?.updated_at,
+  fork: args?.fork,
+});
 
 export const getRepos = async (
   init?: { server?: boolean } & RequestInit
@@ -23,14 +29,7 @@ export const getRepos = async (
 
   try {
     const res = await repos(init);
-    data = (await res.json())
-      .map(({ name, html_url, updated_at, fork }: any) => ({
-        name,
-        url: html_url,
-        timestamp: updated_at,
-        fork,
-      }))
-      .sort(sortBy('name'));
+    data = (await res.json()).map(mapByArgs).sort(sortBy('name'));
   } catch (e: any) {
     if (e.name !== 'AbortError') {
       set('error', await e.json());

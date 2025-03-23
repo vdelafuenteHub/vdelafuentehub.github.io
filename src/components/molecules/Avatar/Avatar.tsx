@@ -20,6 +20,7 @@ const Avatar = ({
       className
     )}
     alt={alt}
+    priority
     {...restProps}
   />
 );

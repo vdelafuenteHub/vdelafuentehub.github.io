@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-transform: uppercase;
+}
+
+.divider {
+  display: block;
+  height: 18px;
+  width: 1px;
+  background-color: currentColor;
+}

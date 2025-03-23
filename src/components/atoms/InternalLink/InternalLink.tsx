@@ -19,28 +19,43 @@ const InternalLink = ({
   legacyBehavior = true,
   passHref = true,
   shallow,
-  locale,
+  lng,
+  locale = lng,
   ...restProps
 }: InternalLinkProps) => {
   const { activeLocale } = useIntl();
 
-  const isDefaultLocale = useMemo(
-    () => activeLocale === i18n.defaultLocale,
-    [activeLocale]
+  const { pathname, searchParams, hash } = useMemo(
+    () =>
+      typeof href === 'string'
+        ? new URL(href, process.env.NEXT_PUBLIC_SITE_URL)
+        : href,
+    [href]
   );
+
+  const bool = useMemo(() => {
+    const defaultCase = [lng, activeLocale].includes(i18n?.defaultLocale);
+    const lngCase = !lng || [i18n?.defaultLocale, activeLocale].includes(lng);
+
+    return defaultCase && lngCase;
+  }, [activeLocale, lng]);
 
   return (
     <NextLink
       className={cn('InternalLink-root', className)}
       href={{
-        pathname: !isDefaultLocale
-          ? href === '/'
-            ? '/[lng]'
-            : `/[lng]/${href}`
-          : href,
-        ...(!isDefaultLocale && {
-          query: { lng: activeLocale },
-        }),
+        pathname: bool
+          ? pathname
+          : pathname === '/'
+          ? '/[lng]'
+          : `/[lng]${pathname}`,
+        query: {
+          ...Object.fromEntries(searchParams?.entries()),
+          ...(!bool && {
+            lng: lng || activeLocale,
+          }),
+        },
+        hash,
       }}
       replace={replace}
       scroll={scroll}

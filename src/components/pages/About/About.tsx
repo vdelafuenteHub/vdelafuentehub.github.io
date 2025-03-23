@@ -29,7 +29,7 @@ const About = () => {
         underline="none"
       >
         <Avatar
-          src="/me.jpg"
+          src="/me.webp"
           alt={`${process.env.NEXT_PUBLIC_TITLE}`}
           width="150"
           height="150"

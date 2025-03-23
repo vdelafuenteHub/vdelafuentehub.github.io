@@ -81,14 +81,19 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="icon" type="image/x-icon" href="favicon.png" sizes="60x60" />
-        <meta name="theme-color" content="#000000" />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="/favicon.png"
+          sizes="60x60"
+        />
+        <meta name="theme-color" content="#333333" />
 
-        <link rel="manifest" href="manifest.json" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
 
       <Intl lng={pageProps.lng} lngDict={pageProps.lngDict}>
-        <Loaders fallback={<Loader />}>
+        <Loaders fallback={<Loader aria-label="loader" />}>
           <Layout>
             <Component {...pageProps} />
           </Layout>
