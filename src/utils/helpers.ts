@@ -5,7 +5,6 @@ export const request = (
   fetch(input, {
     ...init,
     headers: {
-      'Content-Type': 'application/json',
       ...init?.headers,
     },
   }).then(res => {
@@ -16,14 +15,15 @@ export const request = (
 const collator = new Intl.Collator();
 
 export const sortBy =
-  (field: string, reverse = 1) =>
-  (a: any, b: any) => {
+  (field: string, reverse?: boolean) => (a: any, b: any) => {
+    const sign = reverse ? -1 : 1;
+
     const A = a?.[field];
     const B = b?.[field];
 
     if (typeof A === 'number' && typeof B === 'number') {
-      return reverse * (A - B);
+      return sign * (A - B);
     }
 
-    return reverse * collator.compare(A, B);
+    return sign * collator.compare(A, B);
   };

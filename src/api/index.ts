@@ -7,6 +7,7 @@ export const repos = (init?: RequestInit) =>
     ...init,
     headers: {
       ...init?.headers,
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${process.env.GITHUB_REPOS_TOKEN}`,
     },
   });
